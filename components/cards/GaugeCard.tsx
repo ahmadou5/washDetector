@@ -173,7 +173,7 @@ export const WashGaugeCard = ({
           isDark ? "border-gray-700" : "border-gray-200"
         }`}
       >
-        <div className="flex flex-row lg:flex-col justify-between items-center">
+        <div className="flex flex-col lg:flex-row justify-between items-center">
           <div>
             <div
               className={`text-xs ${
