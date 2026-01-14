@@ -61,7 +61,7 @@ export default function Home() {
             </div>
 
             <p
-              className={`${isDark ? "text-gray-200" : "text-gray-600"}`}
+              className={`py-1 ${isDark ? "text-gray-200" : "text-gray-600"}`}
             >{`SOL ${price.toLocaleString()}`}</p>
           </div>
           <ThemeToggle />

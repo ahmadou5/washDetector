@@ -118,7 +118,9 @@ const BlockRangeSelector = forwardRef<
       <div className="flex justify-center">
         <button
           onClick={() => setIsModalOpen(true)}
-          className={`flex items-center gap-3 px-4 py-2 rounded-xl font-semibold transition-all ${
+          className={`flex items-center gap-3 px-4 py-2 rounded-xl font-semibold ${
+            isDark ? "text-white" : "text-gray-900"
+          } transition-all ${
             isDark
               ? "bg-gradient-to-br from-gray-800 to-gray-900"
               : "bg-gradient-to-br from-gray-100 to-gray-200"
