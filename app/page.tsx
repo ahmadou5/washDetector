@@ -29,20 +29,20 @@ export default function Home() {
 
   return (
     <div
-      className={`flex min-h-screen items-center flex-col justify-center p-3 font-sans transition-colors ${
+      className={`flex min-h-screen items-start flex-col justify-start pt-4 px-2 sm:px-3 md:px-4 font-sans transition-colors ${
         isDark ? "bg-black" : "bg-zinc-50"
       }`}
     >
-      <div className="flex py-4 px-3 w-full items-center">
+      <div className="flex flex-col sm:flex-row py-2 sm:py-4 px-2 sm:px-3 w-full items-center gap-3 sm:gap-0">
         <div className="flex py-2 px-1 mr-auto ml-1">
           <BlockRangeSelector
             ref={blockRangeSelectorRef}
             onUpdate={handleBlockRangeUpdate}
           />
         </div>
-        <div className=" flex ml-auto mr-1 ">
+        <div className="flex ml-auto mr-1 gap-2">
           <div
-            className={`rounded-xl py-1 px-3 flex ml-3 mr-3 transition-colors ${
+            className={`rounded-xl py-1 px-2 sm:px-3 flex transition-colors text-sm sm:text-base ${
               isDark
                 ? "bg-gradient-to-br from-gray-800 to-gray-900 "
                 : "bg-gradient-to-br from-gray-100 to-gray-200"

@@ -16,6 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Wash Trading Detector",
   description: "Analyze token transfers to identify wash traders and organic trading patterns on Solana and Base networks",
+  viewport: "width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes",
 };
 
 export default function RootLayout({

@@ -179,8 +179,8 @@ export const Dashboard = () => {
       )}
 
       {/* Main Content */}
-      <div className="py-2 w-full gap-2 h-auto mt-2 px-3 flex transition-opacity duration-300">
-        <div className="h-auto w-[73%]">
+      <div className="py-2 w-full gap-2 h-auto mt-2 px-3 flex flex-col lg:flex-row transition-opacity duration-300">
+        <div className="h-auto w-full lg:w-[73%]">
           <OverviewCard
             title="Overview"
             totalVolume={displayedReport?.summary.totalVolume || 0}
@@ -196,7 +196,7 @@ export const Dashboard = () => {
             isDark={isDark}
           />
         </div>
-        <div className="w-[27%]">
+        <div className="w-full lg:w-[27%] mt-4 lg:mt-0">
           <KeyAddressesBreakdown
             uniqueAddresses={displayedReport?.summary.uniqueAddresses || 0}
             identifiedWashTraders={
@@ -206,7 +206,7 @@ export const Dashboard = () => {
         </div>
       </div>
 
-      <div className="py-2 flex px-3  w-full items-center justify-between">
+      <div className="py-2 px-3 w-full">
         <WashGaugeCard
           isDark={isDark}
           isOrganic
@@ -222,11 +222,11 @@ export const Dashboard = () => {
         />
       </div>
 
-      <div className="py-2 flex px-3  w-full items-center justify-between">
+      <div className="py-2 px-3 w-full overflow-x-auto">
         <OrganicTradersList report={displayedReport} />
       </div>
 
-      <div className="py-2 flex px-3  w-full items-center justify-between">
+      <div className="py-2 px-3 w-full overflow-x-auto">
         <WashTradersList report={displayedReport} />
       </div>
     </div>
