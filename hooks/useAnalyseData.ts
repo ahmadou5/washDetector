@@ -45,19 +45,10 @@ export const useAnalyseData = () => {
         endBlock,
       });
 
-      // Check cache first
-      const cachedData = getCache(tokenAddress, startBlock, endBlock);
-      if (cachedData) {
-        console.log("[useAnalysis] Cache hit! Using cached data");
-        setReport(cachedData);
-        setLoading(false);
-        setError(null);
-      } else {
-        // No valid cache, show loading
-        setLoading(true);
-      }
-
+      // Always show loading when explicitly triggered (not from cache)
+      setLoading(true);
       setError(null);
+
       try {
         const payload: payloadType = {};
 

@@ -80,7 +80,10 @@ const BlockRangeSelector = forwardRef<
 
     // Trigger analysis with new block range via callback
     if (onUpdate) {
+      console.log("[BlockRangeSelector] Calling onUpdate callback");
       onUpdate(startNum, endNum);
+    } else {
+      console.warn("[BlockRangeSelector] onUpdate callback not provided!");
     }
 
     // Reset modal state

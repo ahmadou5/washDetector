@@ -15,16 +15,22 @@ export default function Home() {
   const blockRangeSelectorRef = useRef(null);
 
   const handleBlockRangeUpdate = (startBlock: number, endBlock: number) => {
-    console.log("[Dashboard] Block range updated, triggering analysis:", {
+    console.log("[HomePage] Block range updated, triggering analysis:", {
       startBlock,
       endBlock,
     });
+    console.log("[HomePage] runAnalysis function:", typeof runAnalysis);
     // Use the default token address with new block range
-    runAnalysis(
-      "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82",
-      startBlock,
-      endBlock
-    );
+    try {
+      runAnalysis(
+        "0x311935cd80b76769bf2ecc9d8ab7635b2139cf82",
+        startBlock,
+        endBlock
+      );
+      console.log("[HomePage] Analysis triggered successfully");
+    } catch (error) {
+      console.error("[HomePage] Error triggering analysis:", error);
+    }
   };
 
   return (
