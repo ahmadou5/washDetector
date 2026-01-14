@@ -64,7 +64,7 @@ export const StatusBadge = ({ status, lastUpdatedAt }: StatusBadgeProps) => {
       {isUpdating && (
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full border-2 border-transparent border-t-current animate-spin" />
-          <span>Updating data...</span>
+          <span>Getting new data...</span>
         </div>
       )}
 
@@ -80,7 +80,7 @@ export const StatusBadge = ({ status, lastUpdatedAt }: StatusBadgeProps) => {
       {isCachedData && (
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-current" />
-          <span>⚠️ API unavailable - showing cached data</span>
+          <span>⚠️ API LIMIT Hits - showing cached data</span>
         </div>
       )}
 
@@ -88,7 +88,10 @@ export const StatusBadge = ({ status, lastUpdatedAt }: StatusBadgeProps) => {
       {isDemoData && (
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-current" />
-          <span>📊 Demo data (API unavailable)</span>
+          <span>
+            ⚠️ API LIMIT Hits - showing Demo data it was a real data saved just
+            incase of errors.
+          </span>
         </div>
       )}
     </div>
