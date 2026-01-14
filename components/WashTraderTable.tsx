@@ -93,11 +93,9 @@ export function WashTable({
                         <button
                           key={i}
                           onClick={() => handlePageChange(i)}
-                          className={`w-9 h-9 rounded-md flex items-center justify-center text-sm font-medium transition-colors ${
+                          className={`w-9 h-9 rounded-md flex  items-center justify-center text-sm font-medium transition-colors ${
                             currentPage === i
-                              ? ${
-                      isDark ? "bg-gray-800" : "bg-gray-300"
-                    }
+                              ? "bg-black text-gray-300"
                               : "bg-black/50 border border-white text-gray-300 hover:bg-gray-700"
                           }`}
                         >
