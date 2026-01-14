@@ -44,8 +44,8 @@ export default function Home() {
           <div
             className={`rounded-xl py-1 px-3 ml-2 mr-2 flex ml-3 mr-3 border transition-colors ${
               isDark
-                ? "border-green-500 text-white"
-                : "border-green-400 text-gray-900"
+                ? "bg-gradient-to-br from-gray-800 to-gray-900 "
+                : "bg-gradient-to-br from-gray-100 to-gray-200"
             }`}
           >
             <div>

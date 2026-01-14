@@ -44,10 +44,10 @@ export const OrganicTraderCard = ({
 
   return (
     <div
-      className={`py-2 px-4 hover:border-t hover:border-gray-900 transition-all hover:shadow-lg ${
+      className={`py-2 px-4  transition-all hover:shadow-lg ${
         isDark
-          ? "bg-gray-800 hover:bg-gray-800/40"
-          : "bg-gray-100 hover:bg-gray-200/40 "
+          ? "bg-gray-800 hover:bg-gray-800/10"
+          : "bg-gray-100 hover:bg-gray-200/10 "
       }`}
     >
       <div className="flex flex-row items-center gap-6 flex-wrap lg:flex-nowrap">

@@ -37,7 +37,7 @@ export const StatusBadge = ({ status, lastUpdatedAt }: StatusBadgeProps) => {
   return (
     <div
       className={`
-        flex items-center gap-2 px-3 py-2 rounded-xl max-w-[200px] text-sm font-medium
+        flex items-center gap-2 px-3 py-2 rounded-xl  text-sm font-medium
         transition-all duration-300 ease-in-out
         ${
           isUpdating
