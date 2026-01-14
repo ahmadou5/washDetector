@@ -73,98 +73,98 @@ export const WashGaugeCard = ({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-amber-950/0 mb-6">
         <div className="flex justify-center items-center">
           <div className="relative">
-          <svg width="320" height="210" viewBox="0 0 220 180">
-            {/* Background Arc */}
-            <path
-              d="M 30 140 A 80 80 0 1 1 190 140"
-              fill="none"
-              stroke={isDark ? "#374151" : "#E5E7EB"}
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-            />
+            <svg width="320" height="210" viewBox="0 0 220 180">
+              {/* Background Arc */}
+              <path
+                d="M 30 140 A 80 80 0 1 1 190 140"
+                fill="none"
+                stroke={isDark ? "#374151" : "#E5E7EB"}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+              />
 
-            {/* Progress Arc */}
-            <path
-              d="M 30 140 A 80 80 0 1 1 190 140"
-              fill="none"
-              stroke="rgba(34, 197, 94, 0.9)"
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-              strokeDasharray={circumference}
-              strokeDashoffset={Ooffset}
-              style={{
-                transition: "stroke-dashoffset 1s ease-in-out",
-                transform: "rotate(0deg)",
-                transformOrigin: "center",
-              }}
-            />
-          </svg>
+              {/* Progress Arc */}
+              <path
+                d="M 30 140 A 80 80 0 1 1 190 140"
+                fill="none"
+                stroke="rgba(34, 197, 94, 0.9)"
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeDasharray={circumference}
+                strokeDashoffset={Ooffset}
+                style={{
+                  transition: "stroke-dashoffset 1s ease-in-out",
+                  transform: "rotate(0deg)",
+                  transformOrigin: "center",
+                }}
+              />
+            </svg>
 
-          {/* Center Text */}
-          <div
-            className="absolute inset-0 flex flex-col items-center justify-center"
-            style={{ marginTop: "60px" }}
-          >
-            <div className={`text-xl font-bold ${"text-green-500"}`}>
-              {OrganicPercentage?.toLocaleString()}%
-            </div>
+            {/* Center Text */}
             <div
-              className={`text-sm mt-2 ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              }`}
+              className="absolute inset-0 flex flex-col items-center justify-center"
+              style={{ marginTop: "60px" }}
             >
-              Organic Volume
+              <div className={`text-xl font-bold ${"text-green-500"}`}>
+                {OrganicPercentage?.toLocaleString()}%
+              </div>
+              <div
+                className={`text-sm mt-2 ${
+                  isDark ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                Organic Volume
+              </div>
             </div>
           </div>
         </div>
-       </div>
         <div className="flex justify-center items-center">
           <div className="relative">
-          <svg width="320" height="210" viewBox="0 0 220 180">
-            {/* Background Arc */}
-            <path
-              d="M 30 140 A 80 80 0 1 1 190 140"
-              fill="none"
-              stroke={isDark ? "#374151" : "#E5E7EB"}
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-            />
+            <svg width="320" height="210" viewBox="0 0 220 180">
+              {/* Background Arc */}
+              <path
+                d="M 30 140 A 80 80 0 1 1 190 140"
+                fill="none"
+                stroke={isDark ? "#374151" : "#E5E7EB"}
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+              />
 
-            {/* Progress Arc */}
-            <path
-              d="M 30 140 A 80 80 0 1 1 190 140"
-              fill="none"
-              stroke="rgba(239, 68, 68, 0.9)"
-              strokeWidth={strokeWidth}
-              strokeLinecap="round"
-              strokeDasharray={circumference}
-              strokeDashoffset={Woffset}
-              style={{
-                transition: "stroke-dashoffset 1s ease-in-out",
-                transform: "rotate(0deg)",
-                transformOrigin: "center",
-              }}
-            />
-          </svg>
+              {/* Progress Arc */}
+              <path
+                d="M 30 140 A 80 80 0 1 1 190 140"
+                fill="none"
+                stroke="rgba(239, 68, 68, 0.9)"
+                strokeWidth={strokeWidth}
+                strokeLinecap="round"
+                strokeDasharray={circumference}
+                strokeDashoffset={Woffset}
+                style={{
+                  transition: "stroke-dashoffset 1s ease-in-out",
+                  transform: "rotate(0deg)",
+                  transformOrigin: "center",
+                }}
+              />
+            </svg>
 
-          {/* Center Text */}
-          <div
-            className="absolute inset-0 flex flex-col items-center justify-center"
-            style={{ marginTop: "60px" }}
-          >
-            <div className={`text-xl font-bold text-red-400`}>
-              {WashPercentage.toLocaleString()}%
-            </div>
+            {/* Center Text */}
             <div
-              className={`text-sm mt-2 ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              }`}
+              className="absolute inset-0 flex flex-col items-center justify-center"
+              style={{ marginTop: "60px" }}
             >
-              Wash Volume
+              <div className={`text-xl font-bold text-red-400`}>
+                {WashPercentage.toLocaleString()}%
+              </div>
+              <div
+                className={`text-sm mt-2 ${
+                  isDark ? "text-gray-400" : "text-gray-600"
+                }`}
+              >
+                Wash Volume
+              </div>
             </div>
           </div>
         </div>
-       </div>
       </div>
 
       {/* Bottom Stats */}
@@ -173,7 +173,7 @@ export const WashGaugeCard = ({
           isDark ? "border-gray-700" : "border-gray-200"
         }`}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex flex-row lg:flex-col justify-between items-center">
           <div>
             <div
               className={`text-xs ${
