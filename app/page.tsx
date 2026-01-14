@@ -42,7 +42,7 @@ export default function Home() {
         </div>
         <div className=" flex ml-auto mr-1 ">
           <div
-            className={`rounded-xl py-1 px-3 ml-2 mr-2 flex ml-3 mr-3 border transition-colors ${
+            className={`rounded-xl py-1 px-3 flex ml-3 mr-3 transition-colors ${
               isDark
                 ? "bg-gradient-to-br from-gray-800 to-gray-900 "
                 : "bg-gradient-to-br from-gray-100 to-gray-200"
@@ -51,6 +51,7 @@ export default function Home() {
             <div>
               <Image
                 height={22}
+                className="rounded-full"
                 width={22}
                 alt="sol"
                 src={
@@ -59,7 +60,7 @@ export default function Home() {
               />
             </div>
 
-            <p>{price.toLocaleString()}</p>
+            <p>{`SOL ${price.toLocaleString()}`}</p>
           </div>
           <ThemeToggle />
         </div>
