@@ -164,7 +164,7 @@ export const Dashboard = () => {
   return (
     <div className="w-full h-auto transition-opacity duration-300">
       {/* Status Badge */}
-      <div className="py-2 px-3 w-12">
+      <div className="py-2 px-3 ">
         <StatusBadge status={statusBadge} lastUpdatedAt={lastUpdatedAt} />
       </div>
       <div className="py-2 px-3">
