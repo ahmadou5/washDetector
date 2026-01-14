@@ -50,7 +50,7 @@ export const OverviewCard = ({
           {title}
         </span>
       </div>
-      <div className=" flex py-3 px-0">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 py-3 px-0">
         <DataCard
           value={"Net Flow"}
           netVolume={totalVolume}
