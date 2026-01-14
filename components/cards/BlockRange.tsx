@@ -2,7 +2,6 @@ import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { RefreshCw, X, Search, Check } from "lucide-react";
 import { useThemeStore } from "@/store/themeStore";
 import { useBlockData } from "@/hooks/useBlockData";
-import { runAnalysis } from "@/lib/analyser";
 
 interface BlockRangeSelectorProps {
   onUpdate?: (startBlock: number, endBlock: number) => void;
@@ -79,20 +78,18 @@ const BlockRangeSelector = forwardRef<
       endBlock: endNum,
     });
 
-    // Only run analysis if validation passes
-    runAnalysis({
-      from: startNum,
-      to: endNum,
-    });
-
     // Trigger analysis with new block range via callback
-    console.log(
-      "[BlockRangeSelector] Analysis triggered with valid block range"
-    );
     if (onUpdate) {
       onUpdate(startNum, endNum);
     }
+
+    // Reset modal state
     setIsModalOpen(false);
+    setIsStartDropdownOpen(false);
+    setIsEndDropdownOpen(false);
+    setStartSearchQuery("");
+    setEndSearchQuery("");
+    setValidationError(null);
   };
 
   useImperativeHandle(ref, () => ({
@@ -146,18 +143,6 @@ const BlockRangeSelector = forwardRef<
             }`}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-5">
-              <div
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `radial-gradient(circle, ${
-                    isDark ? "#fff" : "#000"
-                  } 1px, transparent 1px)`,
-                  backgroundSize: "20px 20px",
-                }}
-              ></div>
-            </div>
             {/* Modal Header */}
             <div
               className={`flex items-center justify-between p-6 border-b ${
@@ -464,7 +449,14 @@ const BlockRangeSelector = forwardRef<
               }`}
             >
               <button
-                onClick={() => setIsModalOpen(false)}
+                onClick={() => {
+                  setIsModalOpen(false);
+                  setIsStartDropdownOpen(false);
+                  setIsEndDropdownOpen(false);
+                  setStartSearchQuery("");
+                  setEndSearchQuery("");
+                  setValidationError(null);
+                }}
                 className={`px-6 py-2.5 rounded-lg font-medium transition-colors ${
                   isDark
                     ? "bg-gray-800 hover:bg-gray-750 text-gray-300"
