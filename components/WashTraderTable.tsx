@@ -53,7 +53,11 @@ export function WashTable({
                   <button
                     onClick={() => handlePageChange(currentPage - 1)}
                     disabled={currentPage === 1}
-                    className="w-9 h-9 rounded-md bg-black/50 hover:bg-black border border-white disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-gray-300 transition-colors"
+                    className={`w-9 h-9 rounded-md ${
+                      isDark ? "text-gray-200" : "text-gray-600"
+                    } disabled:opacity-30 ${
+                      isDark ? "bg-gray-800" : "bg-gray-300"
+                    } disabled:cursor-not-allowed flex items-center justify-center text-gray-300 transition-colors`}
                   >
                     <svg
                       className="w-4 h-4"
@@ -91,7 +95,9 @@ export function WashTable({
                           onClick={() => handlePageChange(i)}
                           className={`w-9 h-9 rounded-md flex items-center justify-center text-sm font-medium transition-colors ${
                             currentPage === i
-                              ? "bg-black text-gray-300"
+                              ? ${
+                      isDark ? "bg-gray-800" : "bg-gray-300"
+                    }
                               : "bg-black/50 border border-white text-gray-300 hover:bg-gray-700"
                           }`}
                         >
@@ -106,7 +112,11 @@ export function WashTable({
                   <button
                     onClick={() => handlePageChange(currentPage + 1)}
                     disabled={currentPage === totalPages}
-                    className="w-9 h-9 rounded-md  bg-black/50 hover:bg-black border border-white disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-gray-300 transition-colors"
+                    className={`w-9 h-9 rounded-md  ${
+                      isDark ? "text-gray-200" : "text-gray-600"
+                    } ${
+                      isDark ? "bg-gray-800" : "bg-gray-300"
+                    } disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-gray-300 transition-colors`}
                   >
                     <svg
                       className="w-4 h-4"
