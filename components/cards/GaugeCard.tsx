@@ -69,9 +69,10 @@ export const WashGaugeCard = ({
         </div>
       </div>
 
-      {/* Gauge */}
-      <div className=" flex bg-amber-950/0 justify-center items-center mb-6">
-        <div className=" relative">
+      {/* Gauge Container - Responsive layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-amber-950/0 mb-6">
+        <div className="flex justify-center items-center">
+          <div className="relative">
           <svg width="320" height="210" viewBox="0 0 220 180">
             {/* Background Arc */}
             <path
@@ -116,7 +117,9 @@ export const WashGaugeCard = ({
             </div>
           </div>
         </div>
-        <div className="relative">
+       </div>
+        <div className="flex justify-center items-center">
+          <div className="relative">
           <svg width="320" height="210" viewBox="0 0 220 180">
             {/* Background Arc */}
             <path
@@ -161,6 +164,7 @@ export const WashGaugeCard = ({
             </div>
           </div>
         </div>
+       </div>
       </div>
 
       {/* Bottom Stats */}
